@@ -137,11 +137,9 @@ The histogram titled "Distribution of Stillbirth Licenses" displays the frequenc
 #| warning: false
 #| message: false
 
-data$TIME_PERIOD <- as.Date(paste0(data$TIME_PERIOD, "-01"), format = "%Y-%m-%d")
-
-# Extract the year and month
+# Extract the month and year from TIME_PERIOD
 data$Year <- format(data$TIME_PERIOD, "%Y")
-data$Month <- format(data$TIME_PERIOD, "%B") 
+data$Month <- format(data$TIME_PERIOD, "%B")
 
 # Monthly trend comparison over years
 ggplot(data, aes(x = Month, y = STILLBIRTH_LICENSES, color = Year, group = Year)) +
